@@ -2,10 +2,11 @@ import React, { useEffect } from 'react';
 import GridList from '@material-ui/core/GridList';
 import Image from '../../Image'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { useStyles } from './styles';
+import { fetchGallery } from '../../../actions/actions'
 
-export default function Gallery() {
+const Gallery = () => {
   const classes = useStyles();
 
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ export default function Gallery() {
 
   useEffect(() => {
     dispatch(fetchGallery);
-  }, [])
+  }, [dispatch])
 
   return (
     <div className={classes.root}>
@@ -24,3 +25,5 @@ export default function Gallery() {
     </div>
   );
 }
+
+export default Gallery;
