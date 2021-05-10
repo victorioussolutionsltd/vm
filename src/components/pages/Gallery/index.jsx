@@ -10,17 +10,27 @@ const Gallery = () => {
   const classes = useStyles();
 
   const dispatch = useDispatch();
-  const images = useSelector(state => state.images)
+  const images = useSelector(state => state.images.images)
+  const loading = useSelector(state => state.images.loading)
 
   useEffect(() => {
-    dispatch(fetchGallery);
+    dispatch(fetchGallery());
   }, [dispatch])
+
+  if (loading) {
+    return <div>Loading gallery</div>
+  }
+
+  if (images?.length === 0) {
+    return <div>Gallery does not have any images</div>
+  }
 
   return (
     <div className={classes.root}>
       <GridList cellHeight={200} spacing={1} className={classes.gridList}>
-        {images.map((tile) => Image(tile)
-        )}
+        {
+          images?.map((tile) => Image(tile))
+        }
       </GridList>
     </div>
   );
