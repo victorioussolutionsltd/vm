@@ -1,11 +1,20 @@
 import initialState from "./initialState"
-import actions from "../actions/actionTypes"
+import actionTypes from "../actions/actionTypes"
 import { combineReducers } from 'redux';
 
-export const images = (state = initialState.images, action) => {
+export const images = (state = initialState, action) => {
   switch (action.type) {
-    case actions.FETCHING_IMAGES_FINISHED:
-      return action.images;
+    case actionTypes.FETCH_IMAGES:
+      {
+        const loading = true;
+        return { ...state, loading };
+      }
+    case actionTypes.FETCHING_IMAGES_FINISHED:
+      {
+        const loading = false;
+        const images = action.images;
+        return { ...state, loading, images }
+      };
     default:
       return state
   }
