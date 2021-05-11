@@ -8,6 +8,15 @@ export const useStyles = makeStyles((theme) => ({
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
   },
+  noImages: {
+    display: 'flex',
+    marginTop: '15px',
+    textAlign: 'center',
+    justifyContent: 'center',
+    textJustify: 'center',
+    fontSize: '17pt',
+    fontWeight: 'bold',
+  },
   gridList: {
     width: 500,
     height: 450,
