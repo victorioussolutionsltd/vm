@@ -22,7 +22,7 @@ const Gallery = () => {
   }
 
   if (images?.length === 0) {
-    return <div>Gallery does not have any images</div>
+    return <div className={classes.noImages}>No images</div>
   }
 
   return (
