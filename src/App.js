@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import Upload from './components/pages/Upload'
 import Gallery from './components/pages/Gallery'
 import Navbar from './components/Navbar'
+import Snackbar from './components/Snackbar'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 
@@ -31,6 +32,7 @@ const App = () => {
               <Gallery />
             </Route>
           </Switch>
+          <Snackbar />
         </div>
       </Router>
     </Provider>
