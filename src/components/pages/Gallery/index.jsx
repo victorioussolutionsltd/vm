@@ -32,7 +32,7 @@ const Gallery = () => {
   }, [dispatch, total])
 
   useEffect(() => {
-    dispatch(fetchGallery({ limit, page: (page - 1) }));
+    dispatch(fetchGallery({ order: 'Asc', limit, page: (page - 1) }));
   }, [dispatch, page])
 
 
