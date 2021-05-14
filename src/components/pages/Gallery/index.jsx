@@ -50,7 +50,7 @@ const Gallery = () => {
     <div className={classes.root}>
       <GridList spacing={1} className={classes.gridList} cols={4}>
         {
-          images?.map((image) => <Image image={image} />)
+          images?.map((image) => <Image key={`unique${image.id}`} image={image} />)
         }
       </GridList>
       <Pagination count={numberOfPages} onChange={pageChanged} />
