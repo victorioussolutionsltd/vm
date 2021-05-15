@@ -3,7 +3,7 @@ import actionTypes from "../actions/actionTypes"
 export const uploadingStatus = {
   NO_ACTION: "NO_ACTION",
   LOADING: "LOADING",
-  FINISHED_LOADING: "winter",
+  FINISHED_LOADING: "FINISHED_LOADING",
 }
 const initialState = {
   uploading: uploadingStatus.NO_ACTION,
